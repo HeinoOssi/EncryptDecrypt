@@ -37,23 +37,23 @@ public:
 
 	// Encryption with private key
 	std::string Encrypt(std::string text) {
-		std::string output = text;
+		std::string Encrypted = text;
 
 		for (int i = 0; i < text.size(); i++) {
-			output[i] = text[i] ^ EncryptKey[i % (sizeof(EncryptKey) / sizeof(char))];
+			Encrypted[i] = text[i] ^ EncryptKey[i % (sizeof(EncryptKey) / sizeof(char))];
 		}
-		return output;
+		return Encrypted;
 	}
 
 	std::string Decrypt(std::string text) {
-		std::string output = text;
+		std::string Encrypted = text;
 
 		for (int i = 0; i < text.size(); i++) {
-			output[i] = text[i] ^ EncryptKey[i % (sizeof(EncryptKey) / sizeof(char))];
+			Encrypted[i] = text[i] ^ EncryptKey[i % (sizeof(EncryptKey) / sizeof(char))];
 
 		}
 
-		return output;
+		return Encrypted;
 
 	}
 private:
